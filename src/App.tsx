@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { Show, Grid, GridItem, HStack } from "@chakra-ui/react";
 import { Genre } from "./hooks/useGenres";
+import { Platform } from "./hooks/useGames";
 import Navbar from "./Components/Navbar";
 import GameGrid from "./Components/GameGrid";
 import GenreList from "./Components/GenreList";
 import PlatfromSelector from "./Components/PlatfromSelector";
-import { Platform } from "./hooks/useGames";
 import SortSelector from "./Components/SortSelector";
 import "./App.css";
 
@@ -24,7 +24,7 @@ function App() {
     <>
       <Grid
         templateAreas={{
-          sm: `"nav main"`,
+          sm: `"nav" "main"`,
           lg: `"nav nav" "aside main"`,
         }}
         templateColumns={
