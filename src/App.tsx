@@ -24,7 +24,7 @@ function App() {
     <>
       <Grid
         templateAreas={{
-          sm: `"nav" "main"`,
+          base: `"nav" "main"`,
           lg: `"nav nav" "aside main"`,
         }}
         templateColumns={
