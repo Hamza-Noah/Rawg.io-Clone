@@ -19,7 +19,7 @@ function App() {
 
   const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery)
 
-  
+
   return (
     <>
       <Grid
@@ -43,7 +43,7 @@ function App() {
           </GridItem>
         </Show>
         <GridItem area="main">
-          <HStack>
+          <HStack spacing={5} paddingLeft={2} marginBottom={5}>
             <PlatfromSelector selectedPlatform={gameQuery.platform} onSelectPlatform={(platform) => { setGameQuery({ ...gameQuery, platform }) }} />
             <SortSelector sortOrder={gameQuery.sortOrder} onSelectSortOrder={(sortOrder) => setGameQuery({ ...gameQuery, sortOrder })}></SortSelector>
           </HStack>
