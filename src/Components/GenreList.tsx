@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Heading,
   HStack,
@@ -23,33 +24,37 @@ const GenreList = ({ selectedGenre, onSelectGenre }: Props) => {
 
   return (
     <>
-    <Heading marginBottom={3} fontSize="2xl">Genres</Heading>
-      <List>
-        {data.map((genre, i) => (
-          <ListItem key={i} paddingY="5px ">
-            <HStack>
-              <Image
-                objectFit="cover"
-                boxSize="32px"
-                borderRadius={8}
-                src={getCroppedImageUrl(genre.image_background)}
-              />
-              <Button
-                whiteSpace="normal"
-                textAlign="left"
-                fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
-                variant="link"
-                onClick={() => {
-                  onSelectGenre(genre);
-                }}
-                fontSize="lg"
-              >
-                {genre.name}
-              </Button>
-            </HStack>
-          </ListItem>
-        ))}
-      </List>
+      <Box>
+        <Heading marginBottom={3} fontSize="2xl">
+          Genres
+        </Heading>
+        <List>
+          {data.map((genre, i) => (
+            <ListItem key={i} paddingY="5px ">
+              <HStack>
+                <Image
+                  objectFit="cover"
+                  boxSize="32px"
+                  borderRadius={8}
+                  src={getCroppedImageUrl(genre.image_background)}
+                />
+                <Button
+                  whiteSpace="normal"
+                  textAlign="left"
+                  fontWeight={genre.id === selectedGenre?.id ? "bold" : "normal"}
+                  variant="link"
+                  onClick={() => {
+                    onSelectGenre(genre);
+                  }}
+                  fontSize="lg"
+                >
+                  {genre.name}
+                </Button>
+              </HStack>
+            </ListItem>
+          ))}
+        </List>
+      </Box>
     </>
   );
 };
